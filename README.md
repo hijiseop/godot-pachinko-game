@@ -1,6 +1,7 @@
 # 🎮 Godot Pachinko-Style Auto Battle Game
 
-A 2D auto-battle game inspired by pachinko mechanics, built with **Godot Engine**.
+A 2D auto-battle game inspired by pachinko mechanics, built with **Godot Engine 4.x**.  
+This project demonstrates stage progression, rush mode probabilities, and a fully automated battle system.
 
 ---
 
@@ -13,7 +14,10 @@ A 2D auto-battle game inspired by pachinko mechanics, built with **Godot Engine*
   - Multi-round sequences (2R, 10R)  
   - Rush mode persistence and support spins  
 
+---
+
 ## 📂 Project Structure
+```plaintext
 godot-pachinko-game/
  ├─ project.godot          # Godot project settings
  ├─ main/
@@ -32,27 +36,3 @@ godot-pachinko-game/
  ├─ README.md
  ├─ LICENSE
  └─ .gitignore
-
-
-## 📊 Main UI Layout
-MainUI
- ├─ PanicTimer
- ├─ SpinTimer
- ├─ MainLayout
- │   ├─ TopArea
- │   │   ├─ LeftPanel
- │   │   │   └─ LeftContent
- │   │   │       ├─ EnemyStatsLabel
- │   │   │       ├─ EnemyHealthCol
- │   │   │       ├─ EnemyDisplay
- │   │   │       └─ PlayerDisplay
- │   │   ├─ RightPanel
- │   │   └─ PauseLabel
- │   ├─ BottomArea
- │   │   └─ PlayerStatsLabel
- │   └─ ActionContainer
- │       ├─ AttackButton
- │       ├─ SpinButton
- │       └─ PauseButton
-
-
