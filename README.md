@@ -12,3 +12,45 @@ A 2D auto-battle game inspired by pachinko mechanics, built with **Godot Engine*
   - Separate normal / rush probabilities  
   - Multi-round sequences (2R, 10R)  
   - Rush mode persistence and support spins  
+
+## 📂 Project Structure
+godot-pachinko-game/
+├─ project.godot # Godot project settings
+├─ main/
+│ ├─ MainUI.tscn # Main UI scene
+│ ├─ main.gd # Root script
+│ ├─ attack_logic.gd # Attack mechanics
+│ ├─ enemy.gd # Enemy logic
+│ ├─ rush_logic.gd # Rush system
+│ ├─ panic_logic.gd # Panic timer & mode
+│ ├─ pachinko.gd # Pachinko probability logic
+│ └─ epic.gd # Epic system logic
+├─ scenes/
+│ └─ Enemy.tscn # Enemy scene
+├─ scripts/
+│ └─ Control.gd # Shared UI control
+├─ README.md
+├─ LICENSE
+└─ .gitignore
+
+## 📊 Main UI Layout
+MainUI
+├─ PanicTimer
+├─ SpinTimer
+├─ MainLayout
+│ ├─ TopArea
+│ │ ├─ LeftPanel
+│ │ │ └─ LeftContent
+│ │ │ ├─ EnemyStatsLabel
+│ │ │ ├─ EnemyHealthCol
+│ │ │ ├─ EnemyDisplay
+│ │ │ └─ PlayerDisplay
+│ │ ├─ RightPanel
+│ │ └─ PauseLabel
+│ ├─ BottomArea
+│ │ └─ PlayerStatsLabel
+│ └─ ActionContainer
+│ ├─ AttackButton
+│ ├─ SpinButton
+│ └─ PauseButton
+
