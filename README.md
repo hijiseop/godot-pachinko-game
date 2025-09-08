@@ -37,6 +37,9 @@ godot-pachinko-game/
  ├─ LICENSE
  └─ .gitignore
 
+
+---
+
 ```markdown
 ## 📊 Main UI Layout
 ```plaintext
@@ -59,4 +62,3 @@ MainUI
  │       ├─ AttackButton
  │       ├─ SpinButton
  │       └─ PauseButton
-
