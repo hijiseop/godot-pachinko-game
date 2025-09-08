@@ -36,3 +36,26 @@ godot-pachinko-game/
  ├─ README.md
  ├─ LICENSE
  └─ .gitignore
+
+## 📊 Main UI Layout
+```plaintext
+MainUI
+ ├─ PanicTimer
+ ├─ SpinTimer
+ ├─ MainLayout
+ │   ├─ TopArea
+ │   │   ├─ LeftPanel
+ │   │   │   └─ LeftContent
+ │   │   │       ├─ EnemyStatsLabel
+ │   │   │       ├─ EnemyHealthCol
+ │   │   │       ├─ EnemyDisplay
+ │   │   │       └─ PlayerDisplay
+ │   │   ├─ RightPanel
+ │   │   └─ PauseLabel
+ │   ├─ BottomArea
+ │   │   └─ PlayerStatsLabel
+ │   └─ ActionContainer
+ │       ├─ AttackButton
+ │       ├─ SpinButton
+ │       └─ PauseButton
+
