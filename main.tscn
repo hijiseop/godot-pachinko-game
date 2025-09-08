@@ -1,0 +1,121 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvakw5gcq8x0p"]
+
+[ext_resource type="Script" uid="uid://dmxvarpxt47a2" path="res://main.gd" id="1_ig7tw"]
+
+[node name="MainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+
+[node name="PanicTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="SpinTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="MainLayout" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopArea" type="HSplitContainer" parent="MainLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftPanel" type="Panel" parent="MainLayout/TopArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LeftContent" type="Control" parent="MainLayout/TopArea/LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnemyStatsLabel" type="Label" parent="MainLayout/TopArea/LeftPanel/LeftContent"]
+layout_mode = 2
+offset_right = 570.0
+offset_bottom = 23.0
+text = "ENEMY: 0"
+
+[node name="EnemyHealthColor" type="ColorRect" parent="MainLayout/TopArea/LeftPanel/LeftContent"]
+layout_mode = 1
+offset_top = 30.0
+offset_right = 570.0
+offset_bottom = 50.0
+color = Color(1, 0.0431373, 0.0431373, 1)
+
+[node name="EnemyDisplay" type="ColorRect" parent="MainLayout/TopArea/LeftPanel/LeftContent"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -172.0
+offset_right = -85.0
+offset_bottom = 118.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+color = Color(0.52549, 0.996078, 0.294118, 1)
+
+[node name="PlayerDisplay" type="ColorRect" parent="MainLayout/TopArea/LeftPanel/LeftContent"]
+layout_mode = 2
+offset_left = 60.0
+offset_top = 230.0
+offset_right = 210.0
+offset_bottom = 460.0
+color = Color(0.117647, 0.0117647, 1, 1)
+
+[node name="RightPanel" type="Panel" parent="MainLayout/TopArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PauseLabel" type="Label" parent="MainLayout/TopArea"]
+visible = false
+layout_mode = 2
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomArea" type="VBoxContainer" parent="MainLayout"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="PlayerStatsLabel" type="Label" parent="MainLayout/BottomArea"]
+layout_mode = 2
+text = "BALL: 0 / MODE: NORMAL"
+
+[node name="ActionContainer" type="HBoxContainer" parent="MainLayout/BottomArea"]
+layout_mode = 2
+
+[node name="AttackButton" type="Button" parent="MainLayout/BottomArea/ActionContainer"]
+layout_mode = 2
+text = "Attack"
+
+[node name="SpinButton" type="Button" parent="MainLayout/BottomArea/ActionContainer"]
+layout_mode = 2
+text = "Spin"
+
+[node name="PauseButton" type="Button" parent="MainLayout/BottomArea/ActionContainer"]
+layout_mode = 2
+text = "STOP"
+
+[connection signal="timeout" from="PanicTimer" to="." method="_on_PanicTimer_timeout"]
+[connection signal="timeout" from="SpinTimer" to="." method="_on_SpinTimer_timeout"]
+[connection signal="pressed" from="MainLayout/BottomArea/ActionContainer/AttackButton" to="." method="_on_AttackButton_pressed"]
+[connection signal="pressed" from="MainLayout/BottomArea/ActionContainer/SpinButton" to="." method="_on_SpinButton_pressed"]
+[connection signal="pressed" from="MainLayout/BottomArea/ActionContainer/PauseButton" to="." method="_on_StopButton_pressed"]
